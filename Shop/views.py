@@ -19,7 +19,7 @@ def index(request):
 
 
 def About(request):
-    return render(request,'Shop/about.html')
+    return render(request,'shop/about.html')
 
 
 def contact(request):
@@ -33,7 +33,7 @@ def contact(request):
         contact.save()
         x=True
         
-    return render(request,'Shop/contact.html',{'thank':x})
+    return render(request,'shop/contact.html',{'thank':x})
     
 
 
@@ -55,7 +55,7 @@ def Tracker(request):
         except Exception as e:
             return HttpResponse('{"status":"error"}')
 
-    return render(request, 'Shop/track.html')
+    return render(request, 'shop/track.html')
 
 
 def Search(request):
@@ -74,7 +74,7 @@ def Search(request):
     params = {'allProds': allProds, "msg": ""}
     if len(allProds) == 0 or len(query)<4:
         params = {'msg': "Please make sure to enter relevant search query"}
-    return render(request, 'Shop/search.html', params)
+    return render(request, 'shop/search.html', params)
 
 
 def searchMatch(query, item):
@@ -87,7 +87,7 @@ def searchMatch(query, item):
 
 def ProductView(request, myid):
     product=Product.objects.filter(id=myid)
-    return render(request,"Shop/product.html",{'product':product[0]})
+    return render(request,"shop/product.html",{'product':product[0]})
 
 
 def Checkout(request):
@@ -109,9 +109,9 @@ def Checkout(request):
             update.save()
             thank = True
             id = order.order_id
-            return render(request, 'Shop/checkout.html',context={'thank':thank,'id':id})
+            return render(request, 'shop/checkout.html',context={'thank':thank,'id':id})
         else:
-            return render(request, 'Shop/checkout.html',context={'msg':'Your cart is empty, please add some items to your cart before checking out!'})
+            return render(request, 'shop/checkout.html',context={'msg':'Your cart is empty, please add some items to your cart before checking out!'})
 
 
-    return render(request, 'Shop/checkout.html')
+    return render(request, 'shop/checkout.html')
