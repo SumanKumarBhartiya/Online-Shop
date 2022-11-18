@@ -37,7 +37,7 @@
 
         {% for i in products %}
         <div class="col-xs-3 col-sm-3 col-md-3">
-          <div class="card align-items-center" style="width: 16.5rem;">
+          <div class="card align-items-center pt-2" style="width: 16.5rem;">
             <img src='/media/{{i.Prod_image}}' class="card-img-top" alt="...">
             <div class="card-body" style="height:220px;">
               <h6 class="card-title" id="namepr{{i.id}}">{{i.Product_name|slice:"0:24"}}</h6>
