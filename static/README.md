@@ -1,0 +1,1 @@
+This is an appliction which mimmics the real world E-Commerce application.
