@@ -22,7 +22,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "poll/wsgi.py"
+        "dest": "Online_Shop/wsgi.py"
       }
     ]
   }
